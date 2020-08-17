@@ -5,8 +5,8 @@ import './post-status-filter.css';
 const PostFilter = () => {
     return (
         <div className="btn-group">
-            <button>All</button>
-            <button>Which i liked</button>
+            <button type="button" className="btn btn-info">All</button>
+            <button type="button" className="btn btn-outline-secondary">Which i liked</button>
 
         </div>
     )
