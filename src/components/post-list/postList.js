@@ -3,11 +3,8 @@ import './post-list.css';
 
 import PostItem from '../post-item/postItem';
 
-import styled from 'styled-components';
 
-const Ul = styled.ul`
- color: "orange"
-`
+
 
 
 

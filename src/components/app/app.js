@@ -66,61 +66,35 @@ export default class App extends Component {
         })
     }
 
-    toggle(id){
+    toggle(id, type){
         this.setState(({data}) => {
             let newArr = data.map(item => {
                 if(item.id === id){
                     let n = item;
-                    n.a = !n.a
+                    if(type === 'important'){
+                        n.important = !n.important
+                    } else {
+                        n.like = !n.like
+                    }
                     return n                    
                 } else {
                     return item
                 }
             })
-           
             return {
                 data: newArr
             }
-
         })
     }
     
     onToggleImportant(id){
-        this.setState(({data}) => {
-            let newArr = data.map(item => {
-                if(item.id === id){
-                    let n = item;
-                    n.important = !n.important
-                    return n                    
-                } else {
-                    return item
-                }
-            })
-           
-            return {
-                data: newArr
-            }
 
-        })
+        this.toggle(id, 'important')
+
     }
     
     onToggleLike(id){
-        this.setState(({data}) => {
-            let newArr = data.map(item => {
-                if(item.id === id){
-                    let n = item;
-                    n.like = !n.like
-                    return n                    
-                } else {
-                    return item
-                }
-            })
-           
-            return {
-                data: newArr
-            }
-
-        })
+        this.toggle(id, 'like')
 
     }
     searchPosts(posts, term){
