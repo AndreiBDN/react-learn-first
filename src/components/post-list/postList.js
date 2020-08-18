@@ -11,7 +11,7 @@ const Ul = styled.ul`
 
 
 
-const PostList = ({posts, onDelete}) => {
+const PostList = ({posts, onDelete, onToggleLike, onToggleImportant}) => {
     const elements = posts.map((post) => {
         if(typeof post === 'object' && isEmpty(post)){
             const {id, ...postProps} = post
@@ -20,6 +20,8 @@ const PostList = ({posts, onDelete}) => {
                  <PostItem 
                  {...postProps}
                   onDelete={() => onDelete(id)}
+                  onToggleImportant={() => onToggleImportant(id)}
+                  onToggleLike={() => onToggleLike(id)}
                  />
     
             </li>
